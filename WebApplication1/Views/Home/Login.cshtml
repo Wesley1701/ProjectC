@@ -1,11 +1,11 @@
 ﻿@model WebApplication1.Models.TimeInfo
 @{
-    ViewData["Title"] = "Privacy Policy";
+    ViewData["Title"] = "Login";
 }
 <h1>@ViewData["Title"]</h1>
 
 <p>Use this page to detail your site's privacy policy.</p>
-<form action="Privacy" method="post">
+<form action="Login" method="post">
     <label>Start Time</label>
     <input type="text" name = "start" value ="@Html.DisplayFor(model=>model.Start)"/><br />
     <label>End</label>

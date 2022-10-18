@@ -1,8 +1,12 @@
-﻿@{
-    ViewData["Title"] = "Home Page";
+﻿@model WebApplication1.Models.TimeInfo
+@{
+    ViewData["Title"] = "Hour Timer";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1>Starting Time: @Html.DisplayFor(model=>model.Start)</h1>
+    <form method="post" asp-contoller="Home">
+        <input type="submit" value="Start Timer" asp-action="StartTimer" />
+    </form>
 </div>
+
