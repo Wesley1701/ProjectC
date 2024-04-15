@@ -1,0 +1,334 @@
+﻿.digit {
+    font-size: 850%;
+    color: #000;
+}
+
+.txt {
+    font-size: 30px;
+    color: #000;
+}
+
+.starttime {
+    color: yellow;
+    font-size: 30px;
+    font-weight: bold;
+    margin-top: 170px;
+}
+
+.taskselection {
+    color: yellow;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+#buttons {
+    margin-top: 50px;
+}
+
+.btn {
+    width: 100px;
+    border: none;
+    padding: 10px 15px;
+    margin: 0px 20px;
+    cursor: pointer;
+    font-size: 20px;
+    transition: 0.5s;
+    color: white;
+    font-weight: 500;
+    box-shadow: 4px -4px #297374;
+}
+
+#start {
+    background-color: #20222E;
+}
+
+#stop {
+    background-color: #20222E;
+    width:auto;
+}
+
+#reset {
+    background-color: #20222E;
+}
+
+/*header*/
+
+header {
+    width: 100%;
+    height: 12%;
+    background-color: yellow;
+}
+
+/*main*/
+
+main {
+    width: 100%;
+    height: 75%;
+    padding-top: 75px;
+    float: left;
+}
+
+/*aside*/
+
+
+
+aside {
+    width: 600px;
+    height: 600px;
+    background-color: #454654;
+    padding-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 50px;
+    box-shadow: 20px 20px yellow;
+}
+
+asideHourLog {
+    position: absolute;
+    width: 900px;
+    height: 370px;
+    background-color: #454654;
+    padding-top: 10%;
+    float: left;
+    padding-left: 5%;
+    margin-left: 25%;
+    box-shadow: 20px 20px yellow;
+}
+
+/*aside2*/
+
+#SubmitButton {
+    width: 100px;
+    height: 55px;
+    background-color: #20222E;
+    color: yellow;
+    text-align: center;
+    font-size: 15px;
+    border-width: 1px;
+    border-color: steelblue;
+}
+#eTime {
+    background-color: #20222E;
+    color: yellow;
+}
+#sTime {
+    background-color: #20222E;
+    color: yellow;
+}
+#edit {
+    margin-top: 15px;
+    background-color: yellow;
+}
+/*
+line {
+    width: 30%;
+    height: 60%;
+    background-color: white;
+    padding-top: 10%;
+    float: left;
+    padding-left: 5%;
+    margin-left: 55%;
+    margin-top: 5%
+}
+*/
+
+
+
+/*footer*/
+
+footer {
+    width: 100%;
+    height: 5.1%;
+    background-color: #a31b1b;
+    clear: both;
+}
+
+.footertext {
+    text-align: center;
+    vertical-align: central;
+    font-family: Arial;
+    color: black;
+    height: 100%;
+    font-size: 16px;
+    padding: 1px 2px;
+    background-color: yellow;
+}
+
+body {
+    margin: 0px;
+    color: yellow;
+    background-color: yellow;
+    background-image: url('/home-hero.jpg');
+}
+
+p {
+    font-family: arial;
+}
+
+h1 {
+    font-family: arial;
+    color: #297374;
+}
+
+h2 {
+    color: white;
+}
+
+/*Navigatiebar  #292935*/
+/*Navigatiebar*/
+
+.navbar {
+    background-color: #009e0d;
+    font-family: Arial;
+}
+
+
+    .navbar a {
+        float: left;
+        margin-top: 20px;
+        font-weight: 200;
+        margin-right: 25px;
+        margin-left: 25px;
+        width: 75px;
+        height: 50px;
+        background-color: #20222E;
+        color: yellow;
+        text-align: center;
+        padding-top: 12px;
+        padding-bottom: 18px;
+        padding-right: 10px;
+        padding-left: 10px;
+        text-decoration: none;
+        font-size: 25px;
+        font-family: arial;
+    }
+
+        .navbar a:hover, .dropdown:hover .dropbtn {
+            background-color: #454654;
+            color: yellow;
+        }
+
+.navbarAccount a {
+    margin-top: 20px;
+    font-weight: 200;
+    margin-right: 25px;
+    margin-bottom: 0px;
+    width: 85px;
+    height: 50px;
+    background-color: #20222E;
+    color: yellow;
+    float: right;
+    text-align: center;
+    padding-top: 23px;
+    padding-bottom: 8px;
+    padding-right: 20px;
+    padding-left: 15px;
+    text-decoration: none;
+    font-size: 25px;
+    font-family: arial;
+}
+
+    .navbarAccount a:hover, .dropdown:hover .dropbtn {
+        background-color: #454654;
+        color: yellow;
+    }
+
+/*Formulier*/
+
+input, select, textarea {
+    width: auto;
+    padding: 12px;
+    border: 2px solid #4e96c8;
+    border-radius: 4px;
+    resize: both;
+}
+
+label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+}
+
+input[type=submit] {
+    background-color: green;
+    color: green;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    float: left;
+    font-family: arial;
+}
+
+    input[type=submit]:hover {
+        background-color: black;
+    }
+
+.formulier {
+    border-radius: 10px;
+    background-color: rgb(21, 44, 122);
+    padding: 20px;
+    width: 90%;
+}
+
+
+
+/*dropdown content (timer)*/
+.dropdown {
+    position: absolute;
+    /*margin-top: 25px;*/
+    display: inline-block;
+    border-radius: 0px;
+    border-block: black;
+    /*margin-left: -75px;*/
+    float: left;
+}
+#projects{
+    margin-top: 0px;
+}
+#services{
+    margin-top: 50px;
+}
+#hourtypes{
+    margin-top: 100px;
+}
+
+
+.dropdown-content {
+    border-radius: 0px;
+    position: absolute;
+    background-color: #20222E;
+    color: yellow;
+    padding-bottom: 50px;
+    padding: 12px 16px;
+}
+
+
+
+/*Tabel*/
+
+table {
+    position: absolute;
+    display: inline-block;
+    overflow: auto;
+    font-family: arial;
+    border-collapse: collapse;
+    background-color: black;
+    width: auto;
+    text-align: right;
+    margin-bottom: 20px;
+    height: 200px;
+}
+
+th {
+    background-color: black;
+    text-align: left;
+    padding: 8px;
+    position: sticky;
+    top: 0px;
+}
+
+td {
+    text-align: left;
+    background-color: #20222E;
+    color: yellow;
+}

@@ -1,0 +1,72 @@
+﻿@model IEnumerable<WebApplication1.Models.ProjectItem>
+@{
+    ViewData["Title"] = "HourEdit";
+    var jsonItems = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model));
+}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible"
+          content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true">
+    <script type="text/javascript">
+        var jsonItems = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(Model));
+    </script>
+</head>
+<body onload="showSelect(jsonItems)">
+    @if (ViewBag.Message != null)
+    {
+        <script type="text/javascript">
+            window.onload = function () {
+                showSelect(jsonItems);
+                alert("@ViewBag.Message");
+            };
+        </script>
+    }
+    <header>
+        <div class="navbar">
+            <a asp-area="" asp-controller="Home" asp-action="HourLog">Hour Log</a>
+            <a asp-area="" asp-controller="Home" asp-action="Index">Hour Timer</a>
+            <a style="float: right" asp-area="" asp-controller="Home" asp-action="Login">Log out</a>
+        </div>
+    </header>
+    <main>
+        <aside>
+            <div>
+                <p>Stored Starttime: </p>
+                <p id="storedS">00:00</p>
+                <p>Stored EndTime: </p>
+                <p id="storedE">00:00</p>
+            </div>
+            <form method="post" asp-controller="Home" asp-action="CheckEdit">
+                <input type="hidden" id="hiddenId" name="itemID" value="" />
+                        <select class="dropdown-content" id="projects" name="projects">
+                            <option value="" selected="selected">Select project</option>
+                         </select>
+                         <select class="dropdown-content" id="services" name="services">
+                            <option value="" selected="selected">Please select project first</option>
+                         </select>
+                        <select class="dropdown-content" id="hourtypes" name="hourtypes">
+                            <option value="" selected="selected">Please select service first</option>
+                        </select>
+                    <label style="margin-top: 160px;"for="sTime"><b style="color: #FFE500">StartTime</b></label>
+                    <input type="time" id="sTime" name="sTime" value="00:00" required>
+
+                    <label for="eTime"><b style="color: #FFE500">EndTime</b></label>
+                    <input type="time" id="eTime" name="eTime" value="00:00" required>
+
+                    <button id="SubmitButton" type="submit">Submit</button>
+            </form>
+        </aside>
+    </main>
+    <footer>
+        <div class=footertext>
+            <p> Made by group 3</p>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/HourLogEdit.js" asp-append-version="true"></script>
+</body>
+</html>

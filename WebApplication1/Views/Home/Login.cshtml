@@ -1,14 +1,84 @@
-﻿@model WebApplication1.Models.TimeInfo
+﻿@model LoginForm
 @{
-    ViewData["Title"] = "Login";
+    ViewData["Title"] = "Home Page";
 }
-<h1>@ViewData["Title"]</h1>
 
-<p>Use this page to detail your site's privacy policy.</p>
-<form action="Login" method="post">
-    <label>Start Time</label>
-    <input type="text" name = "start" value ="@Html.DisplayFor(model=>model.Start)"/><br />
-    <label>End</label>
-    <input type="text" name="End" value = "@Html.DisplayFor(model=>model.End)"/>
-    <input type="submit" />
-</form>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: url('/home-hero.jpg');
+        }
+
+        form {
+            border: 3px solid #fff;
+            background-color: #2D2E3B
+        }
+
+        input[type=text], input[type=email], input[type=password] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #FFE500;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #FFE500;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+            button:hover {
+                opacity: 0.8;
+            }
+
+        .imgcontainer {
+            text-align: center;
+            margin: 24px 0 12px 0;
+        }
+
+        img.logo {
+            padding-top: 20px;
+        }
+
+        .container {
+            padding: 16px;
+        }
+
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Welkom!</h2>
+
+    <form method="post" asp-controller="Home" asp-action="Index">
+        <div class="imgcontainer">
+            <img src="BlisLogo2.PNG" alt="Blis Digital" class="logo">
+        </div>
+
+        <div class="container">
+            <label for="Email"><b style="color: #FFE500">Email</b></label>
+            <input type="email" id="EmaiL" autofocus="true" placeholder="Enter Email" name="Email" required>
+
+            <label for="psw"><b style="color: #FFE500">Password</b></label>
+            <input type="password" id="Psw" placeholder="Enter Password" name="psw" required>
+
+            <button id="login" type="submit">Login</button>
+        </div>
+    </form>
+
+</body>
+</html>
+
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/js/loginScript.js" asp-append-version="true"></script>

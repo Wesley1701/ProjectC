@@ -1,0 +1,96 @@
+﻿@model IEnumerable<WebApplication1.Models.Hours>
+@{
+    ViewData["Title"] = "HourLog";
+}
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible"
+          content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="~/css/style.css" asp-append-version="true">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <a asp-area="" asp-controller="Home" asp-action="HourLog">Hour Log</a>
+            <a asp-area="" asp-controller="Home" asp-action="Index">Hour Timer</a>
+            <a style="float: right" asp-area="" asp-controller="Home" asp-action="Login">Log out</a>
+        </div>
+    </header>
+    <main>
+        <asideHourLog>
+            <table class="hourlogtable" id="table1">
+                <tr>
+                    <th>
+                        @Html.DisplayNameFor(model => model.ID)
+                    </th>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Project
+                    </th>
+                    <th>
+                        Service
+                    </th>
+                    <th>
+                        Hour Type
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.StartTime)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.EndTime)
+                    </th>
+                    <th>
+                        Edit
+                    </th>
+                </tr>
+                @foreach (var item in Model)
+                {
+                    
+                    <tbody>
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ID)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.EmployeeID)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ProjectID)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ServiceID)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.HoursTypeID)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.StartTime)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.EndTime)
+                            </td>
+                            <td>
+                                <form method="post" asp-controller="Home" asp-action="HourEdit">
+                                    <button id="edit" type="submit" name="itemID" value=@item.ID onclick="saveId(@item.ID)">Edit</button>
+                                </form>
+                            </td>
+                        </tr>
+                    </tbody>
+                }
+            </table>
+        </asideHourLog>
+    </main>
+    <footer>
+        <div class=footertext>
+            <p> Made by group 3</p>
+        </div>
+    </footer>
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/js/HourLogEdit.js" asp-append-version="true"></script>
+</body>
+</html>
